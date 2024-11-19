@@ -14,12 +14,12 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Message Boards'),
+        title: const Text('Message Boards'),
       ),
       drawer: Drawer(
         child: ListView(
           children: [
-            DrawerHeader(
+            const DrawerHeader(
               decoration: BoxDecoration(
                 gradient:
                     LinearGradient(colors: [Colors.blue, Colors.blueAccent]),
@@ -35,22 +35,22 @@ class HomePage extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.message, color: Colors.blue),
-              title: Text('Message Boards'),
+              leading: const Icon(Icons.message, color: Colors.blue),
+              title: const Text('Message Boards'),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              leading: Icon(Icons.person, color: Colors.blue),
-              title: Text('Profile'),
+              leading: const Icon(Icons.person, color: Colors.blue),
+              title: const Text('Profile'),
               onTap: () {
                 Navigator.pushNamed(context, '/profile');
               },
             ),
             ListTile(
-              leading: Icon(Icons.settings, color: Colors.blue),
-              title: Text('Settings'),
+              leading: const Icon(Icons.settings, color: Colors.blue),
+              title: const Text('Settings'),
               onTap: () {
                 Navigator.pushNamed(context, '/settings');
               },
@@ -62,7 +62,7 @@ class HomePage extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: GridView.builder(
           itemCount: messageBoards.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, // Number of columns
             crossAxisSpacing: 10, // Space between columns
             mainAxisSpacing: 10, // Space between rows
@@ -92,10 +92,10 @@ class HomePage extends StatelessWidget {
                       backgroundImage: AssetImage(board['icon']!),
                       radius: 30,
                     ),
-                    SizedBox(height: 10),
+                    const SizedBox(height: 10),
                     Text(
                       board['name']!,
-                      style: TextStyle(
+                      style: const TextStyle(
                         color: Colors.white,
                         fontSize: 18,
                         fontWeight: FontWeight.bold,

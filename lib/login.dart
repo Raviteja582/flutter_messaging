@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'sign-up.dart';
+import 'home-page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -20,8 +21,8 @@ class _LoginPageState extends State<LoginPage> {
       try {
         await _auth.signInWithEmailAndPassword(
             email: email!, password: password!);
-        // Navigator.pushReplacement(
-        //     context, MaterialPageRoute(builder: (context) => HomePage()));
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => HomePage()));
       } catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('Error: $e')),
@@ -33,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Login')),
+      appBar: AppBar(title: const Text('Login')),
       body: Form(
         key: _formKey,
         child: Padding(
@@ -42,33 +43,33 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               TextFormField(
-                decoration: InputDecoration(labelText: 'Email'),
+                decoration: const InputDecoration(labelText: 'Email'),
                 onSaved: (value) => email = value,
                 validator: (value) =>
                     value!.isEmpty ? 'Please enter your email' : null,
               ),
               TextFormField(
-                decoration: InputDecoration(labelText: 'Password'),
+                decoration: const InputDecoration(labelText: 'Password'),
                 obscureText: true,
                 onSaved: (value) => password = value,
                 validator: (value) =>
                     value!.isEmpty ? 'Please enter a password' : null,
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: loginUser,
-                child: Text('Login'),
+                child: const Text('Login'),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               TextButton(
                 onPressed: () {
                   // Navigate to the registration page
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => RegistrationPage()),
+                    MaterialPageRoute(builder: (context) => const RegistrationPage()),
                   );
                 },
-                child: Text('Don’t have an account? Register here'),
+                child: const Text('Don’t have an account? Register here'),
               ),
             ],
           ),
