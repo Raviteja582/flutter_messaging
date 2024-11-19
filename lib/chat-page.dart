@@ -33,9 +33,19 @@ class ChatPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(boardName),
+        backgroundColor: Colors.blueGrey,
       ),
       body: Column(
         children: [
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image:
+                    AssetImage("assets/background.png"), // Path to your image
+                fit: BoxFit.fill,
+              ),
+            ),
+          ),
           // Message List
           Expanded(
             child: StreamBuilder<QuerySnapshot>(
@@ -67,7 +77,8 @@ class ChatPage extends StatelessWidget {
                                 .toLocal()
                                 .toString()
                             : 'Just now',
-                        style: const TextStyle(fontSize: 12, color: Colors.grey),
+                        style:
+                            const TextStyle(fontSize: 12, color: Colors.grey),
                       ),
                     );
                   },

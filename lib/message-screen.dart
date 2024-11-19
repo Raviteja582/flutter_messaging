@@ -9,14 +9,14 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Timer(const Duration(seconds: 3), () {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => LoginPage()));
+          context, MaterialPageRoute(builder: (context) => const LoginPage()));
     });
 
     return const Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.deepOrange,
       body: Center(
         child: Text(
-          'Welcome to FastChat',
+          'Welcome to Messaging',
           style: TextStyle(
             fontSize: 24,
             fontWeight: FontWeight.bold,

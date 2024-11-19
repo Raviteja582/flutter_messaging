@@ -3,10 +3,10 @@ import 'chat-page.dart';
 
 class HomePage extends StatelessWidget {
   final List<Map<String, String>> messageBoards = [
-    {'name': 'Sports', 'icon': 'assets/sports.jpeg'},
-    {'name': 'Study Group', 'icon': 'assets/study.jpeg'},
-    {'name': 'Technology', 'icon': 'assets/tech.jpeg'},
-    {'name': 'Health', 'icon': 'assets/health.jpeg'},
+    {'name': 'Machine Learning', 'icon': 'assets/ML.png'},
+    {'name': 'Web Development', 'icon': 'assets/web-development.jpg'},
+    {'name': 'Data Science', 'icon': 'assets/data-science.jpg'},
+    {'name': 'Big Data Analysis', 'icon': 'assets/BD.png'},
   ];
 
   HomePage({super.key});
@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Message Boards'),
+        title: const Text('Channels'),
       ),
       drawer: Drawer(
         child: ListView(
@@ -23,34 +23,34 @@ class HomePage extends StatelessWidget {
             const DrawerHeader(
               decoration: BoxDecoration(
                 gradient:
-                    LinearGradient(colors: [Colors.blue, Colors.blueAccent]),
+                    LinearGradient(colors: [Colors.white, Colors.blueAccent]),
               ),
               child: Center(
                 child: Text(
                   'Menu',
                   style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: 24,
                       fontWeight: FontWeight.bold),
                 ),
               ),
             ),
             ListTile(
-              leading: const Icon(Icons.message, color: Colors.blue),
-              title: const Text('Message Boards'),
+              leading: const Icon(Icons.message, color: Colors.red),
+              title: const Text('Groups'),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              leading: const Icon(Icons.person, color: Colors.blue),
+              leading: const Icon(Icons.person, color: Colors.red),
               title: const Text('Profile'),
               onTap: () {
                 Navigator.pushNamed(context, '/profile');
               },
             ),
             ListTile(
-              leading: const Icon(Icons.settings, color: Colors.blue),
+              leading: const Icon(Icons.settings, color: Colors.red),
               title: const Text('Settings'),
               onTap: () {
                 Navigator.pushNamed(context, '/settings');
