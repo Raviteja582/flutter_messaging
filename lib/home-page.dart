@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'chat-page.dart';
 
 class HomePage extends StatelessWidget {
   final List<Map<String, String>> messageBoards = [
@@ -72,12 +73,12 @@ class HomePage extends StatelessWidget {
             final board = messageBoards[index];
             return GestureDetector(
               onTap: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => ChatPage(boardName: board['name']!),
-                //   ),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChatPage(boardName: board['name']!),
+                  ),
+                );
               },
               child: Card(
                 elevation: 5,
